@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Plus+Jakarta+Sans:wght@500;800&display=swap);
+@import './variables';
+@import './reset';
+
+@mixin flexCenter($direction){
+    display: flex;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
+
+
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: grid;
+    place-items: center;
+    background: $very-light-grayish-blue;
+    height: 50vh;
+    color: $dark-grayish-blue
+}
+
+:empty:not(img, picture, svg, input, button){
+    display: none;
+}
+
+.main{
+    width: min(90%, 40rem);
+    padding: 1rem;
+    margin: .5rem auto;
+    background-color: $white;
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.notifications{
+    @include flexCenter(column);
+    gap: 10px;
+}
+
+.main_head{
+    @include flexCenter(row);
+    justify-content: space-between;
+    margin: 1rem auto;
+    h3{
+        color: $very-dark-blue;
+        span{
+            background: $primary-blue;
+            color: $white;
+            padding:.2rem .8rem;
+            border-radius: .2rem;
+            margin-left: 5px;
+        }
+    }
+    
+}
+
+.notification{
+    @include flexCenter(row);
+    align-items: flex-start;
+    width: 100%;
+    padding: .5rem;
+    border-radius: .5rem;
+    
+    .pic >img{
+        width: 3rem;
+        height: auto;
+        margin-right: .5rem;
+    }
+    &__content{
+        p{
+            .name{
+                font-weight: weight(bold);
+                color: $very-dark-blue;
+            }
+            .group{
+                font-weight: weight(bold);
+                color: $primary-blue;
+            }
+            .state{
+                background-color: $primary-red;
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+            }
+            .thing{
+                font-weight: weight(bold);
+                img{
+                    display: block;
+                    margin: 1rem 0;
+                    width: 3rem;
+                    height: auto;
+                }
+            }
+        }
+        .sent_date >span{
+            color: $grayish-blue;
+        }
+        .private-msg{
+            padding: .5rem;
+            border: $grayish-blue solid 1px;
+            border-radius: .2rem;
+            margin: 1rem 0;
+        }
+    }
+}
+
+.notification:first-child,
+.notification:nth-child(2),
+.notification:nth-child(3){
+    background-color: $light-grayish-blue1;
+    .state{
+        display: inline-block;
+    }
+}

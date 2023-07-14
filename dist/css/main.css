@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Plus+Jakarta+Sans:wght@500;800&display=swap);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: grid;
+  place-items: center;
+  background: hsl(210, 60%, 98%);
+  height: 50vh;
+  color: hsl(219, 12%, 42%);
+}
+
+:empty:not(img, picture, svg, input, button) {
+  display: none;
+}
+
+.main {
+  width: min(90%, 40rem);
+  padding: 1rem;
+  margin: 0.5rem auto;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.notifications {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main_head {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem auto;
+}
+.main_head h3 {
+  color: hsl(224, 21%, 14%);
+}
+.main_head h3 span {
+  background: hsl(219, 85%, 26%);
+  color: hsl(0, 0%, 100%);
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.2rem;
+  margin-left: 5px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.notification .pic > img {
+  width: 3rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+.notification__content p .name {
+  font-weight: 800;
+  color: hsl(224, 21%, 14%);
+}
+.notification__content p .group {
+  font-weight: 800;
+  color: hsl(219, 85%, 26%);
+}
+.notification__content p .state {
+  background-color: hsl(1, 90%, 64%);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+.notification__content p .thing {
+  font-weight: 800;
+}
+.notification__content p .thing img {
+  display: block;
+  margin: 1rem 0;
+  width: 3rem;
+  height: auto;
+}
+.notification__content .sent_date > span {
+  color: hsl(219, 14%, 63%);
+}
+.notification__content .private-msg {
+  padding: 0.5rem;
+  border: hsl(219, 14%, 63%) solid 1px;
+  border-radius: 0.2rem;
+  margin: 1rem 0;
+}
+
+.notification:first-child,
+.notification:nth-child(2),
+.notification:nth-child(3) {
+  background-color: hsl(211, 68%, 94%);
+}
+.notification:first-child .state,
+.notification:nth-child(2) .state,
+.notification:nth-child(3) .state {
+  display: inline-block;
+}/*# sourceMappingURL=main.css.map */
